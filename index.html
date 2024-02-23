@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Um lugar para encontrar qualquer coisa..."
+    />
+    <title>Deep Web - Início</title>
+    <link
+      rel="icon"
+      href="playground/images/DeepWebLogo.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" type="text/css" href="playground/style/theme.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <img
+        class="header-i"
+        src="playground/images/DeepWebLogo.svg"
+        alt="Logo da Deep Web"
+      />
+
+      <nav class="header-m">
+        <a class="header-mi">Início</a>
+        <a class="header-mi">Loja</a>
+        <a class="header-mi">Sobre Nós</a>
+        <a class="header-mi">Coligação</a>
+      </nav>
+    </header>
+
+    <main class="conteudo">
+      <section class="conteudo-p">
+        <div class="conteudo-pe">
+          <h1 class="conteudo-pet1">Deep Web</h1>
+          <h2 class="conteudo-pet2">Um lugar para encontrar qualquer coisa.</h2>
+          <button class="conteudo-petb">Ver produtos</button>
+        </div>
+
+        <img
+          class="conteudo-pi shake-once"
+          id="conteudo-pi"
+          src="playground/images/MoedasLogoAtivo.svg"
+          alt="Logo Moedas com Folhas"
+        />
+      </section>
+
+      <section class="conteudo-s">
+        <h3 class="conteudo-s3">O que fazemos?</h3>
+        <p class="conteudo-sp">
+          1. Vendemos <strong>produtos de alta qualidade</strong> com um sistema
+          de entrega totalmente seguro.
+        </p>
+        <p class="conteudo-sp">
+          2. Organizamos
+          <strong>comunidades com os mesmos interesses</strong> para diversos
+          fins.
+        </p>
+        <p class="conteudo-sp">
+          3. Alertamos sobre
+          <strong>possíveis investigações policiais</strong> e da Sevastopol.
+        </p>
+        <p class="conteudo-sp">
+          4. Entregamos os produtos utilizando
+          <strong>drones de exploração</strong> e reconhecimento.
+        </p>
+      </section>
+
+      <section class="conteudo-loja">
+        <h3 class="conteudo-loja-title">Nossos Produtos</h3>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Pesquisar um produto"
+        />
+        <div class="conteudo-loja-cards">
+          <div class="conteudo-loja-card" data-id="1">
+            <img
+              class="conteudo-loja-card-img"
+              src="playground/images/Arma CZ P10.png"
+              alt="Nome do Produto"
+            />
+            <h4 class="conteudo-loja-card-title">Pistola CZ P-10</h4>
+            <p class="conteudo-loja-card-description">
+              Uma pistola semiautomática compacta fabricada pela Česká zbrojovka
+              na República Tcheca.
+            </p>
+            <p class="conteudo-loja-card-units">Unidades: 1</p>
+            <p class="conteudo-loja-card-description">Efeito: +5 de Dano</p>
+            <div class="conteudo-loja-card-price">€500,00</div>
+            <button class="conteudo-loja-card-button">Detalhes</button>
+          </div>
+
+          <div class="conteudo-loja-card" data-id="2">
+            <img
+              class="conteudo-loja-card-img"
+              src="playground/images/Bala .45 ACP.png"
+              alt="Nome do Produto"
+            />
+            <h4 class="conteudo-loja-card-title">Balas .45 ACP</h4>
+            <p class="conteudo-loja-card-description">
+              O .45 ACP é um cartucho de potência média que viaja a uma
+              velocidade de 250 m/s.
+            </p>
+            <p class="conteudo-loja-card-units">Unidades: 10</p>
+            <p class="conteudo-loja-card-description">Efeito: 2D8 de Dano</p>
+            <div class="conteudo-loja-card-price">€50,00</div>
+            <button class="conteudo-loja-card-button">Detalhes</button>
+          </div>
+
+          <div class="conteudo-loja-card" data-id="3">
+            <img
+              class="conteudo-loja-card-img"
+              src="playground/images/Suco de Sorriso.png"
+              alt="Nome do Produto"
+            />
+            <h4 class="conteudo-loja-card-title">Suco de Sorriso</h4>
+            <p class="conteudo-loja-card-description">
+              O Suco de Sorriso é um líquido que causa uma sensação de
+              felicidade extrema.
+            </p>
+            <p class="conteudo-loja-card-units">Unidades: 1</p>
+            <p class="conteudo-loja-card-description">Efeito: Estresse = 0</p>
+            <div class="conteudo-loja-card-price">€50,00</div>
+            <button class="conteudo-loja-card-button">Detalhes</button>
+          </div>
+
+          <div class="conteudo-loja-card" data-id="4">
+            <img
+              class="conteudo-loja-card-img"
+              src="playground/images/Arco Artemis G5.png"
+              alt="Nome do Produto"
+            />
+            <h4 class="conteudo-loja-card-title">Arco Artemis G5</h4>
+            <p class="conteudo-loja-card-description">
+              Um arco composto feito com liga de grafeno e metal cromático. Extremamente letal.
+            </p>
+            <p class="conteudo-loja-card-units">Unidades: 1</p>
+            <p class="conteudo-loja-card-description">Efeito: +7 de Dano</p>
+            <div class="conteudo-loja-card-price">€500,00</div>
+            <button class="conteudo-loja-card-button">Detalhes</button>
+          </div>
+
+          <div class="conteudo-loja-card" data-id="5">
+            <img
+              class="conteudo-loja-card-img"
+              src="playground/images/Flechas Artemis.png"
+              alt="Nome do Produto"
+            />
+            <h4 class="conteudo-loja-card-title">Flechas Artemis G5</h4>
+            <p class="conteudo-loja-card-description">
+              As flechas Artemis G5 são flechas de caça rosqueáveis feitas de
+              aço inoxidável.
+            </p>
+            <p class="conteudo-loja-card-units">Unidades: 10</p>
+            <p class="conteudo-loja-card-description">Efeito: 2D8 de Dano</p>
+            <div class="conteudo-loja-card-price">€50,00</div>
+            <button class="conteudo-loja-card-button">Detalhes</button>
+          </div>
+
+          <div class="conteudo-loja-card" data-id="6">
+            <img
+              class="conteudo-loja-card-img"
+              src="playground/images/MWF.png"
+              alt="Nome do Produto"
+            />
+            <h4 class="conteudo-loja-card-title">Mirror World Fragment</h4>
+            <p class="conteudo-loja-card-description">
+              Paradoxo. Cacos de vidro que projetam imagens de um mundo inexistente.
+            </p>
+            <p class="conteudo-loja-card-units">Unidades: 1</p>
+            <p class="conteudo-loja-card-description">Efeito: N/A</p>
+            <div class="conteudo-loja-card-price">€2000,00</div>
+            <button class="conteudo-loja-card-button">Detalhes</button>
+          </div>
+
+          <div class="conteudo-loja-card" data-id="7">
+            <img
+              class="conteudo-loja-card-img"
+              src="playground/images/Arca Plasmor.png"
+              alt="Nome do Produto"
+            />
+            <h4 class="conteudo-loja-card-title">Arca Plasmor</h4>
+            <p class="conteudo-loja-card-description">
+              Uma espingarda que dispara rajadas de plasma. Sobreviventes são consumidos pela radiação.
+            </p>
+            <p class="conteudo-loja-card-units">Unidades: 1</p>
+            <p class="conteudo-loja-card-description">Efeito: +15 de Dano</p>
+            <div class="conteudo-loja-card-price">€1000,00</div>
+            <button class="conteudo-loja-card-button">Detalhes</button>
+          </div>
+          
+          <div class="conteudo-loja-card" data-id="8">
+            <img
+              class="conteudo-loja-card-img"
+              src="playground/images/CE.png"
+              alt="Nome do Produto"
+            />
+            <h4 class="conteudo-loja-card-title">Célula de Energia</h4>
+            <p class="conteudo-loja-card-description">
+            Comumente utilizado em usinas nucleares, baterias de avião e bases da marinha.
+            </p>
+            <p class="conteudo-loja-card-units">Unidades: 5</p>
+            <p class="conteudo-loja-card-description">Efeito: 1D20</p>
+            <div class="conteudo-loja-card-price">€200,00</div>
+            <button class="conteudo-loja-card-button">Detalhes</button>
+          </div>
+          
+          <!-- Adicionar mais cards aqui, se necessário -->
+        </div>
+        
+      </section>
+
+      <div class="popup-overlay"></div>
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <button id="close-button" class="closes-button">x</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="rodape">
+      <div class="rodape-container">
+        <div class="rodape-logo">
+          <h1 class="conteudo-pet1">Deep Web</h1>
+        </div>
+        <div class="rodape-info">
+          <h4>Deep Web</h4>
+          <p>Um lugar para encontrar qualquer coisa.</p>
+          <p>Rua Estranha, 123 - Agamemnon</p>
+          <p>HoloLink: @deepweb</p>
+        </div>
+        <div class="rodape-coluna">
+          <h4>Links úteis</h4>
+          <ul>
+            <li><a href="#">Termos de serviço</a></li>
+            <li><a href="#">Política de privacidade</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Suporte</a></li>
+          </ul>
+        </div>
+        <div class="rodape-coluna">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Depoimentos</a></li>
+            <li><a href="#">Parceiros</a></li>
+            <li><a href="#">Carreiras</a></li>
+          </ul>
+        </div>
+        <div class="rodape-social">
+          <h4>Siga-nos</h4>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/deepweb" target="_blank"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a href="https://www.twitter.com/deepweb" target="_blank"
+                >Twitter</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/deepweb" target="_blank"
+                >Instagram</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="system.js"></script>
+  
+</html>
