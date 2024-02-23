@@ -5,4 +5,4 @@ Projeto de loja digital para um RPG de mesa cyberpunk retro futurista chamado <s
 O ProjetoRPG é uma criação fictícia, concebida exclusivamente para o uso no universo do RPG <strong>The Mental World</strong>. Todas as informações apresentadas estão estritamente relacionadas ao contexto do RPG e não possuem nenhuma base real. Nada visto neste projeto deve ser considerado realidade.
 
 # Site
-https://marcosalves90.github.io/ProjetoRPG_TMWLoja/
+https://marcosalves90.github.io/ProjetoRPG_TMWLoja
