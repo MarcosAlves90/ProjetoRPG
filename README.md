@@ -1,4 +1,4 @@
-# ProjetoRPG
+# ProjetoRPG_TMWLoja
 Um projeto de loja digital para um RPG de mesa cyberpunk retro futurista chamado <strong>The Mental World</strong>.
 
 # Atenção
