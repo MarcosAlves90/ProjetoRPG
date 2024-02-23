@@ -47,7 +47,7 @@ const products = {
     comp: "3",
   },
   3: {
-    effect: "Estresse do Usuário é resetado.",
+    effect: "-50% Stress.",
     comp: "Desconhecido",
   },
   4: {
@@ -72,6 +72,14 @@ const products = {
     effect: "1D20",
     comp: "7",
   },
+  9: {
+    effect: "Visão do futuro | +10 de Stress",
+    comp: "Desconhecido",
+  },
+  10: {
+    effect: "Visão do futuro | +5 de Força | +5 de Destreza | +5 de Presença | +5 de Inteligência | +5 de Foco | +50 de Stress",
+    comp: "Desconhecido",
+  }
   // Adicionar mais objetos de produtos conforme necessário
 };
 
@@ -82,28 +90,28 @@ function createPopupElements(product) {
   if (product.alcance) {
     const popupAlcance = document.createElement("p");
     popupAlcance.classList.add("popup-alcance");
-    popupAlcance.textContent = "Alcance: " + product.alcance;
+    popupAlcance.innerHTML = `<span style="font-weight: bold;">Alcance:</span> ${product.alcance}`;
     popupElements.push(popupAlcance);
   }
 
   if (product.ammo) {
     const popupAmmo = document.createElement("p");
     popupAmmo.classList.add("popup-ammo");
-    popupAmmo.textContent = "Munição: " + product.ammo;
+    popupAmmo.innerHTML = `<span style="font-weight: bold;">Munição:</span> ${product.ammo}`;
     popupElements.push(popupAmmo);
   }
 
   if (product.effect) {
     const popupEffect = document.createElement("p");
     popupEffect.classList.add("popup-effect");
-    popupEffect.textContent = "Efeito: " + product.effect;
+    popupEffect.innerHTML = `<span style="font-weight: bold;">Efeito:</span> ${product.effect}`;
     popupElements.push(popupEffect);
   }
 
   if (product.comp) {
     const popupComp = document.createElement("p");
     popupComp.classList.add("popup-comp");
-    popupComp.textContent = "Complexidade: " + product.comp;
+    popupComp.innerHTML = `<span style="font-weight: bold;">Complexidade:</span> ${product.comp}`;
     popupElements.push(popupComp);
   }
 
@@ -126,7 +134,11 @@ function openPopup(event) {
   const cardImage = card.querySelector(".conteudo-loja-card-img");
   const cardTitle = card.querySelector(".conteudo-loja-card-title");
   const cardDescription = card.querySelector(".conteudo-loja-card-description");
-  const cardUnits = card.querySelector(".conteudo-loja-card-units");
+
+  // Declarando as variáveis das unidades do produto clicado
+  const cardUnitsText = card.querySelector(".conteudo-loja-card-units").textContent;
+  const cardUnitsNumber = cardUnitsText.replace("Unidades:", "").trim();
+
   const cardAlcance = products[cardId].alcance;
   const cardEffect = products[cardId].effect;
   const cardComp = products[cardId].comp;
@@ -136,34 +148,39 @@ function openPopup(event) {
   popupOverlay.classList.add("show");
   html.classList.add("disable-scroll");
 
+  // Adicionar a imagem
   const popupImage = document.createElement("img");
   popupImage.classList.add("popup-image");
   popupImage.src = cardImage.src;
   popupImage.alt = "Imagem do produto";
   popupContent.appendChild(popupImage);
 
+  // Adicionar o título
   const popupTitle = document.createElement("h2");
   popupTitle.classList.add("popup-title");
   popupTitle.textContent = cardTitle.textContent;
   popupContent.appendChild(popupTitle);
 
+  // Adicionar a descrição
   const popupDescription = document.createElement("p");
   popupDescription.classList.add("popup-description");
   popupDescription.textContent = cardDescription.textContent;
   popupContent.appendChild(popupDescription);
 
+  // Adicionar os elementos gerados pelo javascript
   const popupElements = createPopupElements(products[cardId]);
-
   popupElements.forEach((element) => popupContent.appendChild(element));
 
+  // Adicionar as unidades
   const popupUnits = document.createElement("p");
   popupUnits.classList.add("popup-units");
-  popupUnits.textContent = cardUnits.textContent;
+  popupUnits.innerHTML = `<strong>Unidades:</strong> ${cardUnitsNumber}`;
   popupContent.appendChild(popupUnits);
 
+  // Adicionar o preço
   const popupPrice = document.createElement("p");
   popupPrice.classList.add("popup-price");
-  popupPrice.textContent = "Preço: " + cardPrice.textContent;
+  popupPrice.innerHTML = `<span style="font-weight: bold;">Preço:</span> ${cardPrice.textContent}`;
   popupContent.appendChild(popupPrice);
 
   popup.style.display = "flex";
