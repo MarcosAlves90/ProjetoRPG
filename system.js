@@ -1,3 +1,22 @@
+// ------------ Início ----------------
+
+// Início do Loader
+document.addEventListener('DOMContentLoaded', () => {
+  const htmlElement = document.documentElement;
+  const loader = document.getElementById('loader');
+
+  // Adiciona a classe 'disable-scroll' ao elemento html
+  htmlElement.classList.add('disable-scroll');
+
+  setTimeout(() => {
+    // Remove a classe 'disable-scroll' do elemento html
+    htmlElement.classList.remove('disable-scroll');
+    // Esconde o loader
+    loader.style.display = 'none';
+  }, 500); // 500 milissegundos = 0.5 segundos
+});
+// Fim do Loader
+
 const image = document.getElementById("conteudo-pi");
 
 // Função para animar a imagem
@@ -215,3 +234,5 @@ popupOverlay.addEventListener("click", () => {
   popupOverlay.classList.remove("show");
   closePopup();
 });
+
+// ------------ Fim ----------------
