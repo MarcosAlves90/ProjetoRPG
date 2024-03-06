@@ -364,7 +364,7 @@ body {
         margin-bottom: 8px;
       }
 
-      &-description, &-units {
+      &-description, &-units, &-effect {
         color: #fff2e7;
         font-size: 16px;
         font-family: "Sarala", sans-serif;
@@ -426,6 +426,45 @@ body {
   &:focus {
     border-color: #4a8fcf;
     outline: none;
+  }
+}
+
+.tag-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-family: "Sarala", sans-serif;
+
+  #tagSelect {
+    font-family: "Sarala", sans-serif;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    transition: all 0.2s ease;
+    width: 200px;
+    text-align: center;
+  
+    option {
+      color: #000;
+    }
+  
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  #product-counter {
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-align: center;
+    color: #fff;
+    width: 200px;
+    text-align: center;
+    transition: all 0.2s ease;
   }
 }
 

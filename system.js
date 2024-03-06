@@ -1,6 +1,5 @@
-// ------------ Início ----------------
+// ------------ Início do Loader ----------------
 
-// Início do Loader
 document.addEventListener('DOMContentLoaded', () => {
   const htmlElement = document.documentElement;
   const loader = document.getElementById('loader');
@@ -15,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loader.style.display = 'none';
   }, 500); // 500 milissegundos = 0.5 segundos
 });
-// Fim do Loader
+
+// ------------ Fim do Loader ----------------
 
 const image = document.getElementById("conteudo-pi");
 
@@ -30,28 +30,69 @@ image.addEventListener("click", function () {
   }, 700);
 });
 
-// Função para pesquisar produtos
-const searchInput = document.getElementById("searchInput");
+// ---------------------------
+
+// Função para filtrar por tag
+var tagSelect = document.getElementById('tagSelect');
 const cards = document.querySelectorAll(".conteudo-loja-card");
+
+function filterByTag() {
+  var selectedTag = tagSelect.value;
+  var visibleProductCount = 0;
+
+  // Filtrar por Tag
+  cards.forEach(function(card) {
+    var cardTag = card.getAttribute('data-tag');
+    // Verifica se o card deve ou não ser exibido
+    if (selectedTag === '' || cardTag === selectedTag) {
+      card.style.display = '';
+      visibleProductCount++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // Atualize o contador de produtos
+  var productCounter = document.getElementById('product-counter');
+  productCounter.textContent = visibleProductCount + ' Produtos';
+}
+
+// Atualize o contador de produtos ao selecionar uma nova tag
+tagSelect.addEventListener('change', filterByTag);
+
+// Chame a função de filtragem de tags quando a página é carregada
+filterByTag();
+
+// ---------------------------
+
+var searchInput = document.getElementById('searchInput');
+searchInput.setAttribute('autocomplete', 'off');
+
+// Função para pesquisar produtos
 searchInput.addEventListener("input", function () {
-  const termoDePesquisa = searchInput.value.toLowerCase();
+  const query = this.value.toLowerCase();
+  const selectedTag = tagSelect.value;
+
   cards.forEach((card) => {
-    const titulo = card
-      .querySelector(".conteudo-loja-card-title")
-      .innerText.toLowerCase();
-    const descricao = card
-      .querySelector(".conteudo-loja-card-description")
-      .innerText.toLowerCase();
-    if (
-      titulo.includes(termoDePesquisa) ||
-      descricao.includes(termoDePesquisa)
-    ) {
+    const title = card.querySelector(".conteudo-loja-card-title").innerText.toLowerCase();
+    const description = card.querySelector(".conteudo-loja-card-description").innerText.toLowerCase();
+    const units = card.querySelector(".conteudo-loja-card-units").innerText.toLowerCase();
+    const effect = card.querySelector(".conteudo-loja-card-effect").innerText.toLowerCase();
+    const price = card.querySelector(".conteudo-loja-card-price").innerText.toLowerCase();
+    const cardTag = card.getAttribute('data-tag');
+
+    if ((selectedTag === '' || cardTag === selectedTag) && (title.includes(query) || description.includes(query) || units.includes(query) || effect.includes(query) || price.includes(query))) {
       card.style.display = "flex";
     } else {
       card.style.display = "none";
     }
   });
 });
+
+var searchInput = document.getElementById('searchInput');
+searchInput.setAttribute('autocomplete', 'off');
+
+// ---------------------------
 
 // Cria objetos de produtos para facilitar o uso dos dados
 const products = {
@@ -98,9 +139,15 @@ const products = {
   10: {
     effect: "Visão do futuro | +5 de Força | +5 de Destreza | +5 de Presença | +5 de Inteligência | +5 de Foco | +50 de Stress",
     comp: "Desconhecido",
+  },
+  11: {
+    effect: "[Cura Leve] - Cura 10% da Vida Máxima",
+    comp: "9",
   }
   // Adicionar mais objetos de produtos conforme necessário
 };
+
+// ---------------------------
 
 // Criar elementos do popup
 function createPopupElements(product) {
