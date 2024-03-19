@@ -38,23 +38,25 @@ const cards = document.querySelectorAll(".conteudo-loja-card");
 
 function filterByTag() {
   var selectedTag = tagSelect.value;
-  var visibleProductCount = 0;
 
   // Filtrar por Tag
-  cards.forEach(function(card) {
-    var cardTag = card.getAttribute('data-tag');
+  var filteredCards = Array.from(cards).filter(function(card) {
+    var cardTags = card.getAttribute('data-tag').split(',');
     // Verifica se o card deve ou não ser exibido
-    if (selectedTag === '' || cardTag === selectedTag) {
-      card.style.display = '';
-      visibleProductCount++;
-    } else {
-      card.style.display = 'none';
-    }
+    return selectedTag === '' || cardTags.includes(selectedTag);
+  });
+
+  // Atualize o DOM
+  cards.forEach(function(card) {
+    card.style.display = 'none';
+  });
+  filteredCards.forEach(function(card) {
+    card.style.display = '';
   });
 
   // Atualize o contador de produtos
   var productCounter = document.getElementById('product-counter');
-  productCounter.textContent = visibleProductCount + ' Produtos';
+  productCounter.textContent = filteredCards.length + ' Produtos';
 }
 
 // Atualize o contador de produtos ao selecionar uma nova tag
@@ -79,9 +81,9 @@ searchInput.addEventListener("input", function () {
     const units = card.querySelector(".conteudo-loja-card-units").innerText.toLowerCase();
     const effect = card.querySelector(".conteudo-loja-card-effect").innerText.toLowerCase();
     const price = card.querySelector(".conteudo-loja-card-price").innerText.toLowerCase();
-    const cardTag = card.getAttribute('data-tag');
+    const cardTags = card.getAttribute('data-tag').split(',');
 
-    if ((selectedTag === '' || cardTag === selectedTag) && (title.includes(query) || description.includes(query) || units.includes(query) || effect.includes(query) || price.includes(query))) {
+    if ((selectedTag === '' || cardTags.includes(selectedTag)) && (title.includes(query) || description.includes(query) || units.includes(query) || effect.includes(query) || price.includes(query))) {
       card.style.display = "flex";
     } else {
       card.style.display = "none";

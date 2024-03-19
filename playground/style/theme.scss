@@ -17,7 +17,7 @@
 
 body {
   font-size: 100%;
-  background: linear-gradient(38deg, #121f25 0%, #315577 100%);
+  background: linear-gradient(38deg, #0e0e0e 0%, #1a1a1a 100%);
   user-select: none;
 }
 
@@ -76,9 +76,16 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #121f25;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  height: 95px;
+
   .header-i {
-    width: 4%;
-    height: 4%;
+    width: 60px;
+    height: 60px;
   }
   .header-m {
     display: flex;
@@ -97,7 +104,6 @@ body {
 
 .conteudo {
   margin-bottom: 48px;
-  border-top: 0.4px solid #fff2e7;
   .conteudo-p {
     padding-top: 80px;
     display: flex;
@@ -212,7 +218,7 @@ body {
 }
 
 .rodape {
-  border-top: 0.4px solid #fff2e7;
+  border-top: 3px solid rgba(255, 255, 255, 0.3);
   background-color: #121f25;
   color: #fff2e7;
   font-family: "Sarala", sans-serif;
@@ -331,18 +337,18 @@ body {
       flex-direction: column;
       justify-content: space-between;
       height: 650px;
-      background-color: rgba(255, 255, 255, 0.15);
+      background-color: #121f25;
+      border: 3px solid rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(10px);
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border: 2px solid rgba(255, 255, 255, 0.3);
       transition: 0.3s;
       padding: 24px;
       width: 300px;
 
       &:hover {
-        background-color: rgba(255, 255, 255, 0.25);
+        background-color: rgb(14, 14, 14);
         transform: translateY(-4px);
         box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.3);
       }
@@ -424,7 +430,7 @@ body {
   text-align: center;
 
   &:focus {
-    border-color: #4a8fcf;
+    border-color: #3b6679;
     outline: none;
   }
 }
@@ -478,12 +484,16 @@ body {
   transform: translate(-50%, -50%);
   z-index: 9999;
 
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
   .popup-content {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.3);
     transition: 0.3s;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.17);
+    background-color: rgb(14, 14, 14);
     padding: 20px;
     border-radius: 20px;
     max-width: 90%;
@@ -495,7 +505,7 @@ body {
     font-size: 18px;
     color: #fff2e7;
     font-family: "Sarala", sans-serif;
-    margin-bottom: 40px; /* Aumente o espaçamento inferior conforme necessário */
+    animation: fadeIn 0.2s ease-in-out;
   }
 
   &-title, &-alcance, &-description, &-units, &-effect, &-price, &-comp, &-ammo {
@@ -537,12 +547,12 @@ body {
   z-index: 9998;
   opacity: 0;
   transition: background-color 0.3s ease, opacity 0.3s ease;
+  animation: fadeIn 0.2s ease-in-out;
 }
 
 .popup-overlay.show {
   display: block;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.95);
   opacity: 1;
 }
 
