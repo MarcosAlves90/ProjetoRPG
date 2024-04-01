@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Um lugar para encontrar qualquer coisa..."
+    />
+    <title>Deep Web - Codex</title>
+    <link
+      rel="icon"
+      href="playground/images/DeepWebLogo.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" type="text/css" href="playground/style/theme.css" />
+  </head>
+
+  <body>
+    <div id="loader">
+      <div class="loader"></div>
+    </div>
+
+    <header class="header">
+      <img
+        class="header-i"
+        src="playground/images/DeepWebLogo.svg"
+        alt="Logo da Deep Web"
+      />
+
+      <nav class="header-m">
+        <a href="index.html" class="header-mi">Binary Helix</a>
+        <a href="wiki.html" class="header-mi">Codex</a>
+        <a href="#" class="header-mi">Sobre Nós</a>
+        <a href="#" class="header-mi">Coligação</a>
+      </nav>
+    </header>
+
+    <main class="conteudo-wiki">
+      <section class="conteudo-wiki-search">
+        <h3 class="conteudo-wiki-search-title">Codex</h3>
+        <h2 class="conteudo-wiki-search-subtitle">
+          O livro que armazena toda a sabedoria.
+        </h2>
+        <input type="text" id="searchInput" placeholder="Pesquisar..." />
+
+        <div class="conteudo-wiki-search-tagcloud">
+          <a href="#tag1">Sistema</a>
+          <a href="#tag2">Pessoas</a>
+          <a href="#tag3">Itens</a>
+          <!-- Adicione mais tags conforme necessário -->
+        </div>
+
+        <div class="conteudo-wiki-cards">
+
+          <!-- Este é um CARD -->
+          <div class="conteudo-wiki-cards-card">
+            <p class="conteudo-wiki-cards-card-title2">Edição Especial</p>
+            <h3 class="conteudo-wiki-cards-card-title1">Kassidy Aethernia</h3>
+            <img
+              src="playground/images/Characters/KassidyIIPrancheta 1@2x.png"
+              alt="Descrição da imagem"
+              class="conteudo-wiki-cards-card-image"
+            />
+            <p class="conteudo-wiki-cards-card-description">Dona do mercado negro Chama Oculta.</p>
+            <div class="conteudo-wiki-cards-card-tags">
+              <a href="#tag2">Pessoas</a>
+              <!-- Tags -->
+            </div>
+            <button
+              onclick="location.href='#pagina1'"
+              class="conteudo-wiki-cards-card-button"
+            >
+              Leia mais
+            </button>
+          </div>
+          <!-- Fim do CARD -->
+
+          <!-- Este é um CARD -->
+          <div class="conteudo-wiki-cards-card">
+            <p class="conteudo-wiki-cards-card-title2">Edição Especial</p>
+            <h3 class="conteudo-wiki-cards-card-title1">Hélios</h3>
+            <img
+              src="playground/images/Characters/SunIIPrancheta-1_2x.jpg"
+              alt="Descrição da imagem"
+              class="conteudo-wiki-cards-card-image"
+            />
+            <p class="conteudo-wiki-cards-card-description">General de Exércitos da Silverwing.</p>
+            <div class="conteudo-wiki-cards-card-tags">
+              <a href="#tag2">Pessoas</a>
+              <!-- Tags -->
+            </div>
+            <button
+              onclick="location.href='#pagina1'"
+              class="conteudo-wiki-cards-card-button"
+            >
+              Leia mais
+            </button>
+          </div>
+          <!-- Fim do CARD -->
+
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <div class="rodape-container">
+        <div class="rodape-logo">
+          <h1 class="conteudo-pet1">Deep Web</h1>
+        </div>
+        <div class="rodape-info">
+          <h4>Deep Web</h4>
+          <p>Um lugar para encontrar qualquer coisa.</p>
+          <p>Rua Estranha, 123 - Agamemnon</p>
+          <p>HoloLink: @deepweb</p>
+        </div>
+        <div class="rodape-coluna">
+          <h4>Links úteis</h4>
+          <ul>
+            <li><a href="#">Termos de serviço</a></li>
+            <li><a href="#">Política de privacidade</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Suporte</a></li>
+          </ul>
+        </div>
+        <div class="rodape-coluna">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Depoimentos</a></li>
+            <li><a href="#">Parceiros</a></li>
+            <li><a href="#">Carreiras</a></li>
+          </ul>
+        </div>
+        <div class="rodape-social">
+          <h4>Siga-nos</h4>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/deepweb" target="_blank"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a href="https://www.twitter.com/deepweb" target="_blank"
+                >Twitter</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/deepweb" target="_blank"
+                >Instagram</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <style>
+      @font-face {
+      font-family: "OldLondon";
+      src:url("wiki/fonts/OldLondon.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+    </style>
+    <script src="system.js"></script>
+    <script src="wiki/wiki.js"></script>
+  </body>
+</html>
