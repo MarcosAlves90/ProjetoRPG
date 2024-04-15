@@ -103,6 +103,97 @@ body {
   }
 }
 
+.conteudo-wikipage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 92vh; /* Ajuste conforme necessário */
+  font-family: "Sarala", sans-serif;
+
+  &-content {
+
+    &-card {
+      display: flex; /* Adiciona flexbox ao card */
+      flex-wrap: wrap;
+      color: #fff2e7;
+      width: 80%; /* Define a largura do card */
+      margin: 30px auto; /* Centraliza o card na página */
+      border: 1px solid #ccc; /* Adiciona uma borda ao card */
+      padding: 20px; /* Adiciona algum espaço interno ao card */
+      background-color: #050505;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+
+    &-cardtext {
+      width: 70%;
+      padding-right: 60px;
+
+      &-title {
+        font-family: "Righteous", cursive;
+        font-size: 3vw;
+        flex-grow: 1; /* Permite que o título ocupe todo o espaço disponível */
+        border-bottom: 0.4px solid #fff2e7;
+        margin-bottom: 30px;
+      }
+
+      &-subtitle {
+        margin-top: 20px;
+      }
+
+      &-description {
+        text-align: justify;
+        order: 2;
+      }
+
+    }
+
+      &-card2 {
+        color: #fff2e7;
+        width: 30%; /* Define a largura do card2 para ocupar metade do card */
+        margin: 0 auto; /* Centraliza o card2 na página */
+        border: 1px solid #ccc; /* Adiciona uma borda ao card2 */
+        background-color: #050505;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-bottom: none;
+        
+        &-title {
+          background-color: rgba(255, 255, 255, 0.3);
+          text-align: center;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          display: flex;
+          border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        &-type1 {
+          padding: 3px;
+          font-size: 1vw;
+          display: flex;
+          border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+
+          &-tag {
+            margin-left: 5px;
+            font-weight: 700;
+            width: 40%;
+          }
+
+          &-value {
+            text-align: center;
+            width: 60%;
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+}
+
 .conteudo-wiki {
   display: flex;
   flex-direction: column;
@@ -180,6 +271,8 @@ body {
       border: 3px solid #948d66;
       border-radius: 0;
       box-shadow: none;
+      cursor: pointer;
+
       &:hover {
         filter: none;
         transform: translateY(-4px);
@@ -212,6 +305,7 @@ body {
       }
 
       &-button {
+        cursor: pointer;
         background-color: #948d66;
         width: 100%;
         height: 40px;
@@ -257,7 +351,6 @@ body {
           font-size: 14px;
           box-shadow: none;
           transition: 0.3s;
-          pointer-events: none;
         }
       }
     }
