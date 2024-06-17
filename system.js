@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     htmlElement.classList.remove('disable-scroll');
     // Esconde o loader
     loader.style.display = 'none';
-  }, 500); // 500 milissegundos = 0.5 segundos
+  }, 500); // 500 milissegundos = 0,5 segundos
 });
 
 // ------------ Fim do Loader ----------------
@@ -24,7 +24,7 @@ image.addEventListener("click", function () {
   image.classList.add("shake-once");
   image.style.animationPlayState = "running";
 
-  // Remova a classe "shake-once" após um determinado período de tempo
+  // Remova a classe "shake-once" após um determinado período
   setTimeout(function () {
     image.classList.remove("shake-once");
   }, 700);
@@ -33,15 +33,15 @@ image.addEventListener("click", function () {
 // ---------------------------
 
 // Função para filtrar por tag
-var tagSelect = document.getElementById('tagSelect');
+const tagSelect = document.getElementById('tagSelect');
 const cards = document.querySelectorAll(".conteudo-loja-card");
 
 function filterByTag() {
-  var selectedTag = tagSelect.value;
+  const selectedTag = tagSelect.value;
 
   // Filtrar por Tag
-  var filteredCards = Array.from(cards).filter(function(card) {
-    var cardTags = card.getAttribute('data-tag').split(',');
+  const filteredCards = Array.from(cards).filter(function (card) {
+    const cardTags = card.getAttribute('data-tag').split(',');
     // Verifica se o card deve ou não ser exibido
     return selectedTag === '' || cardTags.includes(selectedTag);
   });
@@ -55,7 +55,7 @@ function filterByTag() {
   });
 
   // Atualize o contador de produtos
-  var productCounter = document.getElementById('product-counter');
+  const productCounter = document.getElementById('product-counter');
   productCounter.textContent = filteredCards.length + ' Produtos';
 }
 
@@ -67,7 +67,7 @@ filterByTag();
 
 // ---------------------------
 
-var searchInput = document.getElementById('searchInput');
+let searchInput = document.getElementById('searchInput');
 searchInput.setAttribute('autocomplete', 'off');
 
 // Função para pesquisar produtos
@@ -91,7 +91,7 @@ searchInput.addEventListener("input", function () {
   });
 });
 
-var searchInput = document.getElementById('searchInput');
+searchInput = document.getElementById('searchInput');
 searchInput.setAttribute('autocomplete', 'off');
 
 // ---------------------------
@@ -207,10 +207,10 @@ function openPopup(event) {
   const cardUnitsText = card.querySelector(".conteudo-loja-card-units").textContent;
   const cardUnitsNumber = cardUnitsText.replace("Unidades:", "").trim();
 
-  const cardAlcance = products[cardId].alcance;
-  const cardEffect = products[cardId].effect;
-  const cardComp = products[cardId].comp;
-  const cardAmmo = products[cardId].ammo;
+  // const cardAlcance = products[cardId].alcance;
+  // const cardEffect = products[cardId].effect;
+  // const cardComp = products[cardId].comp;
+  // const cardAmmo = products[cardId].ammo;
   const cardPrice = card.querySelector(".conteudo-loja-card-price");
 
   popupOverlay.classList.add("show");
