@@ -278,6 +278,12 @@ cardButtons.forEach((cardButton) => {
 // Adicionar evento de clique no botão de fechar o popup
 popupClose.addEventListener("click", closePopup);
 
+document.addEventListener('keydown', function(event) {
+  if (event.code === 'Escape') { // 27 é o código da tecla ESC
+    closePopup();
+  }
+});
+
 // Adicionar evento de clique no overlay para encerrar o popup quando clicado fora da área do popup
 popupOverlay.addEventListener("click", () => {
   popupOverlay.classList.remove("show");
